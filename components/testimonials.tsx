@@ -1,6 +1,3 @@
-"use client";
-
-import Image from "next/image";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -135,16 +132,11 @@ export default function Testimonials() {
               "
             >
 
-              <Image
-
+              <img
                 src={`${item.image}?auto=format&fit=crop&w=200&q=80`}
-
                 alt={item.name}
-
                 width={56}
-
                 height={56}
-
                 className="
                 h-14
                 w-14
