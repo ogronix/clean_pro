@@ -1,6 +1,3 @@
-"use client";
-
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
     ArrowRight,
@@ -24,13 +21,11 @@ export default function Hero() {
 
             <div className="absolute inset-0">
 
-                <Image
+                <img
                     src="https://images.unsplash.com/photo-1581578731548-c64695cc6952"
                     alt="Professionelle Gebäudereinigung Hamburg"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="100vw"
+                    fetchPriority="high"
+                    className="absolute inset-0 h-full w-full object-cover"
                 />
 
 
@@ -393,16 +388,11 @@ export default function Hero() {
                 "
                             >
 
-                                <Image
-
+                                <img
                                     src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba"
-
                                     alt="Reinigungsteam"
-
                                     width={700}
-
                                     height={900}
-
                                     className="
                   h-[500px]
                   w-full

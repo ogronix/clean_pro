@@ -1,11 +1,7 @@
-"use client";
-
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import {
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 
 import SectionHeading from "./section-heading";
@@ -17,10 +13,10 @@ const comparisons = [
       "Büroreinigung",
 
     before:
-      "images/buro_before.png",
+      "/images/buro_before.png",
 
     after:
-      "images/buro_after.png",
+      "/images/buro_after.png",
   },
 
   {
@@ -28,10 +24,10 @@ const comparisons = [
       "Gewerbefläche",
 
     before:
-      "images/gewerbe_before.png",
+      "/images/gewerbe_before.png",
 
     after:
-      "images/gewerbe_after.png",
+      "/images/gewerbe_after.png",
   },
 ];
 
@@ -112,7 +108,11 @@ export default function BeforeAfter() {
                 "
               >
 
-                <img src={item.before} className="object-cover"/>
+                <img
+                  src={item.before}
+                  alt={`${item.title} vorher`}
+                  className="h-full w-full object-cover"
+                />
 
               </div>
 
@@ -126,7 +126,11 @@ export default function BeforeAfter() {
                 "
               >
 
-                <img src={item.after} className="object-cover"/>
+                <img
+                  src={item.after}
+                  alt={`${item.title} nachher`}
+                  className="h-full w-full object-cover"
+                />
 
               </div>
 

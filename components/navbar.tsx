@@ -1,11 +1,6 @@
-"use client";
-
 import {
-  useEffect,
   useState,
 } from "react";
-
-import Link from "next/link";
 
 import {
   Menu,
@@ -41,33 +36,8 @@ const links = [
 
 export default function Navbar() {
 
-  const [open,setOpen] =
+  const [open, setOpen] =
     useState(false);
-
-  const [scrolled,setScrolled] =
-    useState(false);
-
-
-  useEffect(()=>{
-
-    const handler = () => {
-      setScrolled(
-        window.scrollY > 20
-      );
-    };
-
-    window.addEventListener(
-      "scroll",
-      handler
-    );
-
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handler
-      );
-
-  },[]);
 
 
 
@@ -79,12 +49,12 @@ export default function Navbar() {
         mx-auto max-w-7xl rounded-3xl
         transition-all duration-300
         // ${
-        //   scrolled
-        //   ?
+          //   scrolled
+          //   ?
           "bg-white/80 backdrop-blur-xl shadow-premium border border-white/60"
           // :
           // ""
-        }
+          }
         `}
       >
 
@@ -126,7 +96,7 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-8">
 
-            {links.map(link=>(
+            {links.map(link => (
               <a
                 key={link.href}
                 href={link.href}
@@ -165,7 +135,7 @@ export default function Navbar() {
 
 
           <button
-            onClick={()=>setOpen(!open)}
+            onClick={() => setOpen(!open)}
             className="
             lg:hidden
             flex h-11 w-11
@@ -175,9 +145,9 @@ export default function Navbar() {
           >
             {open
               ?
-              <X/>
+              <X />
               :
-              <Menu/>
+              <Menu />
             }
           </button>
 
@@ -189,51 +159,51 @@ export default function Navbar() {
 
       <AnimatePresence>
 
-      {open && (
+        {open && (
 
-        <motion.div
-          initial={{
-            opacity:0,
-            height:0,
-          }}
-          animate={{
-            opacity:1,
-            height:"auto",
-          }}
-          exit={{
-            opacity:0,
-            height:0,
-          }}
-          className="
+          <motion.div
+            initial={{
+              opacity: 0,
+              height: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+            }}
+            className="
           mt-3 rounded-3xl
           bg-white
           p-6
           shadow-premium
           lg:hidden
           "
-        >
+          >
 
-          <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-4">
 
-            {links.map(link=>(
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={()=>setOpen(false)}
-                className="
+              {links.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="
                 rounded-xl px-4 py-3
                 text-slate-700
                 hover:bg-slate-50
                 "
-              >
-                {link.label}
-              </a>
-            ))}
+                >
+                  {link.label}
+                </a>
+              ))}
 
 
-            <a
-              href="#kontakt"
-              className="
+              <a
+                href="#kontakt"
+                className="
               mt-4 rounded-2xl
               bg-blue-600
               px-5 py-4
@@ -241,15 +211,15 @@ export default function Navbar() {
               font-semibold
               text-white
               "
-            >
-              Angebot anfragen
-            </a>
+              >
+                Angebot anfragen
+              </a>
 
-          </nav>
+            </nav>
 
-        </motion.div>
+          </motion.div>
 
-      )}
+        )}
 
       </AnimatePresence>
 

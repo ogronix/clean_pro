@@ -1,0 +1,6 @@
+{
+  "name": "Clean Pro",
+  "short_name": "Clean Pro",
+  "start_url": "/",
+  "display": "standalone"
+}

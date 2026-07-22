@@ -1,6 +1,3 @@
-"use client";
-
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import SectionHeading from "./section-heading";
@@ -103,18 +100,12 @@ export default function Gallery() {
             "
           >
 
-            <Image
-
+            <img
               src={`${image.src}?auto=format&fit=crop&w=900&q=80`}
-
               alt={image.alt}
-
               width={900}
-
               height={1200}
-
               loading="lazy"
-
               className="
               w-full
               object-cover

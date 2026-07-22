@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Building2,
     Home,
@@ -8,8 +6,6 @@ import {
     Hammer,
     Construction,
 } from "lucide-react";
-
-import { motion } from "framer-motion";
 
 import SectionHeading from "./section-heading";
 
@@ -81,7 +77,7 @@ lg:grid-cols-3
 "
             >
 
-                {services.map((service, index) => {
+                {services.map((service) => {
 
                     const Icon = service.icon;
 
